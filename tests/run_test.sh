@@ -77,7 +77,7 @@ export RT_LOG=${LOG_DIR}/rt_${TEST_ID}${RT_SUFFIX}.log
 echo "Test ${TEST_ID} ${TEST_DESCR}"
 
 source rt_utils.sh
-source atparse.bash
+#source atparse.bash
 
 rm -rf "${RUNDIR}"
 mkdir -p "${RUNDIR}"
@@ -132,6 +132,8 @@ case ${MACHINE_ID} in
     #module use modulefiles
     #module load modules.fv3
     #module load gcc-native/12.3
+    module use /ncrc/proj/epic/spack-stack/spack-ext/repos/spack-stack/packages/
+    module load uwtools/2.7.2
     ;;
   derecho)
     module load nccmp
@@ -141,6 +143,10 @@ case ${MACHINE_ID} in
     module load modules.fv3
     ;;
 esac
+
+atparse() {
+  uw template translate "$@"  # replace atparse script with alias to uwtools
+}
 
 # FV3_RUN could have multiple entry seperated by space
 if [[ -n "${FV3_RUN}" ]]; then
