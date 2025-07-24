@@ -132,8 +132,8 @@ case ${MACHINE_ID} in
     #module use modulefiles
     #module load modules.fv3
     #module load gcc-native/12.3
-    module use /ncrc/proj/epic/spack-stack/spack-ext/repos/spack-stack/packages/
-    module load uwtools/2.7.2
+    module load spack-user
+    eval "$(spack load --sh uwtools@2.7.2)"
     ;;
   derecho)
     module load nccmp
