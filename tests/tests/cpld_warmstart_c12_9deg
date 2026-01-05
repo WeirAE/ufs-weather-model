@@ -85,6 +85,7 @@ export DO_UGWP_V1=.false.
 export atm_omp_num_threads=1
 export WRTTASK_PER_GROUP=1
 export LSM=1
+export LANDICE=.true.
 export ISATMEDMF=1
 export IMP_PHYSICS=11
 
@@ -187,7 +188,6 @@ export CPLCHM=.false.
 
 export eps_imesh=1.0e0
 
-export DIAG_TABLE=diag_table_template
 export FIELD_TABLE=field_table_gfsv16
 export UFS_CONFIGURE=ufs.configure.s2sw.IN
 
